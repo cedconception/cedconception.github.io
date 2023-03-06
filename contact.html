@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="./img/batotoyabeni.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/style-contact.css">
     <title>INFO | BATOTO YA BENI</title>
@@ -12,22 +13,29 @@
 <body>
     <div class="mainPage">
       <!-- HEADER -->
-        <header class="header">
-          <a href="#" class="logo"><img  class="iconL" src="./img/batotoyabeni.png" alt="Batoto YA BENI LOGO">
-            <p>BATOTO YA BENI</p> 
-          </a>
-          <nav class="nav-items">
-            <a href="index.html">Accueil</a>
-            <a href="participer.html">Participez</a>
-            <a href="occupation.html">Que faire à Beni</a>
-            <a href="contact.html">Contact</a>
-          </nav>
-        </header>
+      <header class="header">
+        <a href="index.html " class="logo"><img  class="iconL" src="./img/batotoyabeni.png" alt="Batoto YA BENI LOGO">
+          <p>BATOTO YA BENI</p> 
+        </a>
+        <nav class="nav-items">
+          <ul>
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="participer.html">Participez</a></li>
+            <li><a href="occupation.html">Que faire à Beni</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+        <img src="./img/menu_FILL0_wght400_GRAD0_opsz48.png" alt="MENU" class="menu-hamburger">
+      </header>
           <main id="menu">
+            <div id="message"></div>
             <section>
-              <form>      
-                <input name="name" type="text" class="feedback-input" placeholder="Name" />   
-                <input name="email" type="text" class="feedback-input" placeholder="Email" />
+              <form id="contact-us">
+                <label for="name" style="color: aliceblue; font-size: larger;"> Name : </label>      
+                <input name="name" type="text" required class="feedback-input"/>   
+                <label for="email"  style="color: aliceblue; font-size: larger;"> Email :</label>
+                <input name="email" type="text" class="feedback-input" required/>
+                <label for="text" style=""> Write your comment : </label>
                 <textarea name="text" class="feedback-input" placeholder="Comment"></textarea>
                 <input type="submit" value="SUBMIT"/>
               </form>
@@ -44,13 +52,33 @@
                 </div>
                 <div class="links">
                   <span>Social Links</span>
-                  <a href="https://web.facebook.com/batotoyabeni"><i class="icon-facebook" href="./img/facebook.png"></i></a>
-                  <a href="#"><i class="icon-twitter"></i></a>
-                  <a href="#"><i class="icon-instagram"></i></a>
+                  <a href="https://web.facebook.com/batotoyabeni">facebook  .<i class="fab fa-facebook" href="./img/facebook.png"></i></a>
+                  <a href="#">twitter  .<i class="fab fa-twitter"></i></a>
+                  <a href="#">instagram  .<i class="fab fa-instagram"></i></a>
                 </div>
               </div>
             </footer>
           </main>
     </div>
 </body>
+<script>
+  const menuHamburger = document.querySelector(".menu-hamburger")
+  const navLinks = document.querySelector(".nav-items")
+
+  menuHamburger.addEventListener('click',(e)=>{
+    navLinks.classList.toggle('mobile-menu')
+  })
+  
+  let contactForm=document.getElementById("contact-us")
+    contactForm.addEventListener("submit",(e)=>{
+    e.preventDefault();
+    let form=new FormData(contactForm)
+    contactForm.reset()
+    let sms=document.getElementById("message")
+    sms.setAttribute("style","background-color: red;text-align:center;padding:1% 0%;color:white")
+    sms.innerText="Login success"
+    console.log(form)
+  })
+</script>
+<script type="text/javascript" src="script.js"></script>
 </html>

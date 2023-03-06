@@ -5,21 +5,25 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="./img/batotoyabeni.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
     <link rel="stylesheet" href="./css/style.css">
     <title>BATOTO YA BENI</title>
 </head>
 <body>
     <div class="mainPage">
         <header class="header">
-          <a href="#" class="logo"><img  class="iconL" src="./img/batotoyabeni.png" alt="Batoto YA BENI LOGO">
+          <a href="index.html" class="logo"><img  class="iconL" src="./img/batotoyabeni.png" alt="Batoto YA BENI LOGO">
             <p>BATOTO YA BENI</p> 
           </a>
           <nav class="nav-items">
-            <a href="index.html">Accueil</a>
-            <a href="participer.html">Participez</a>
-            <a href="occupation.html">Que faire à Beni</a>
-            <a href="contact.html">Contact</a>
+            <ul>
+              <li><a href="index.html">Accueil</a></li>
+              <li><a href="participer.html">Participez</a></li>
+              <li><a href="occupation.html">Que faire à Beni</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
           </nav>
+          <img src="./img/menu_FILL0_wght400_GRAD0_opsz48.png" alt="MENU" class="menu-hamburger">
         </header>
           <main>
             <div class="intro">
@@ -69,16 +73,55 @@
             </section>
             <div class="about-us">
               <div class="about-us-text">
-                <h2>HITORY OF BENI</h2>
+                <h2>HISTORY OF BENI</h2>
                 <p>The city of Beni is the second largest city in the northeastern part of the Democratic
                   Republic of Congo after the city of Goma. It is located near the Virunga National
                   Park, on the plateau of Mount Ruwenzori (5109 m above sea level), on the edge of
                   the Ituri forest. It is located 90 km from Kasindi, a town that borders Uganda.
                   We will also present the history of the town of Beni.
                 </p>
+                <button onclick="showMore()">SHOW MORE</button>
               </div>
-              <img src="./img/beniMatonge.jpg" alt="me">
+              <div class="images">
+                <img src="./img/beniMatonge.jpg" alt="me">
+                <img src="./img/rp1.jpg" alt="">
+              </div>
             </div>
+            <form id="formSign">
+              <h1 style="text-align: center;">SIGN UP</h1>
+              <ul class="form-style-1">
+                  <li><label>Full Name <span class="required">*</span></label><input type="text" name="field1" class="field-divided" placeholder="First" /> <input type="text" name="field2" class="field-divided" placeholder="Last" /></li>
+                  <li><label>Birth</label><input type="text" name="field1" class="field-divided" placeholder="Place" /> <input type="date" name="field2" class="field-divided" placeholder="Date" /></li>
+                  
+                  <li> <h3>Gender</h3> <br>
+                    <label for="gender">Male</label>
+                    <input type="radio" id="male" name="gender" value="male">
+                    <label for="female">female</label>
+                    <input type="radio" id="female" name="gender" value="female">
+                    
+                  </li>
+                  <li>
+                      <label>Commune</label>
+                      <select name="field4" class="field-select">
+                      <option value="BUNGULU">BUNGULU</option>
+                      <option value="BEU">BEU</option>
+                      <option value="MULEKERA">MULEKERA</option>
+                        <option value="RWENZORI">RWENZORI</option>
+                      </select>
+                  </li>
+                  <li>
+                    <label>Email <span class="required">*</span></label>
+                    <input type="email" name="field3" class="field-long" />
+                </li>
+                  <li>
+                      <label>Your Message <span class="required">*</span></label>
+                      <textarea name="field5" id="field5" class="field-long field-textarea"></textarea>
+                  </li>
+                  <li>
+                      <input type="submit" value="Submit" />
+                  </li>
+              </ul>
+            </form>
             <footer class="footer">
               <div class="copy">Batoto ya Beni Collectif</div>
               <div class="bottom-links">
@@ -91,13 +134,22 @@
                 </div>
                 <div class="links">
                   <span>Social Links</span>
-                  <a href="https://web.facebook.com/batotoyabeni"><i class="icon-facebook" href="./img/facebook.png"></i></a>
-                  <a href="#"><i class="icon-twitter"></i></a>
-                  <a href="#"><i class="icon-instagram"></i></a>
+                  <a href="https://web.facebook.com/batotoyabeni">facebook  .<i class="fab fa-facebook" href="./img/facebook.png"></i></a>
+                  <a href="#">twitter  .<i class="fab fa-twitter"></i></a>
+                  <a href="#">instagram  .<i class="fab fa-instagram"></i></a>
                 </div>
               </div>
             </footer>
           </main>
     </div>
 </body>
+<script>
+  const menuHamburger = document.querySelector(".menu-hamburger")
+  const navLinks = document.querySelector(".nav-items")
+
+  menuHamburger.addEventListener('click',(e)=>{
+  navLinks.classList.toggle('mobile-menu')
+  })
+</script> 
+<script type="text/javascript" src="script.js"></script>
 </html>

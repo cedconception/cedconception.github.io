@@ -9,57 +9,108 @@
 body {
   margin: 0;
   box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
 }
 a{
   text-decoration: none;
-}
-nav a:current{
-  text-decoration: dashed;
-}
-nav a:hover{
-  color: #ffbf00
 }
 /* CSS for header */
 .header {
   color : white;
   display: flex;
-  justify-content: space-between;
+  flex-wrap: wrap;
+  justify-content: space-around;
   align-items: center;
   background-color: #000000;
   box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.4);
-  height: 100px;
+  height: 80px;
 }
 
 
 .header .logo{
-  font-size: 25px;
+  font-size: 1.5em;
   font-family: Arial, Helvetica, sans-serif ;
   font-weight: bold;
   color: rgb(255, 255, 255);
   text-decoration: none;
-  margin-left: 15px;
   display: flex;
+}
+.header .logo .iconL{
+  padding-top: 7px;
+  width: 50px;
+  height: 60px;
 }
 
 
-.nav-items {
-  font-family: Arial, Helvetica, sans-serif ;
+
+.header .nav-items {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-around;
   align-items: center;
-  margin-right: 20px;
+ 
   
 }
-
-.nav-items a {
-  text-decoration: none;
+.header .nav-items ul {
+  list-style: none;
+  display: flex;
   color: rgb(255, 255, 255);
-  padding: 35px 20px;
 }
-@media only screen and (max-width: 700px) {
-  .intro{
-
+.header .nav-items ul li a{
+  margin: 0 17px;
+  text-decoration: none;
+  color: #ffffff;
+  transition: 0.3s;
+}
+.header .nav-items ul li a:hover{
+  color: rgb(255, 208, 0);
+  font-weight: 500;
+}
+.header .nav-items ul li:active{
+  color: red;
+  font-weight: 500;
+}
+.menu-hamburger{
+  display: none ;
+  position: absolute;
+  top: 20px;
+  right: 30px;
+} 
+.header .mobile-menu{
+  margin-top: 0;
+} 
+@media screen and (max-width:912px) {
+  .header .logo{
+    position: absolute;
+    top: 5px;
+    left: 20px;
   }
+  .nav-items{
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: rgba(56, 55, 55, 0.292);
+    width: 100%;
+    height: 100vh;
+    backdrop-filter: blur(15px);
+    margin-top: -600%;
+    transition: all 0.5s linear ;
+  }
+  .nav-items ul{
+    display: flex;
+    font-size: 2em;
+    font-weight: 600;
+    flex-direction: column;
+    line-height: 2em;
+    align-items: center;
+  }
+  .menu-hamburger{
+    display: block ;
+  }  
+}
+.header .nav-items{
+  margin-left: 0;
 }
 .intro {
   display: flex;
@@ -68,6 +119,7 @@ nav a:hover{
   align-items: center;
   width: auto;
   height: auto;
+  max-height: 500px;
   padding: 3em;
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.5) 100%), url("../img/beniMatonge.jpg");
   background-size: cover;
@@ -126,18 +178,19 @@ nav a:hover{
   float: left;
   width: 100%;
   height: 30%;
-  background-image:         linear-gradient(to right, rgba(0, 85, 244, 0.9) 25%, rgba(6, 46, 49, 0.1) 50%, rgba(113, 0, 0, 0.9) 75%);
+  background-image: linear-gradient(to right, rgba(0, 85, 244, 0.9) 25%, rgba(6, 46, 49, 0.1) 50%, rgba(113, 0, 0, 0.9) 75%);
   
 }
 .animated-logo h1{
+  font-size: 2em;
   color: rgb(255, 217, 0);
   animation: 3s linear 1s infinite alternate slidein;
 }
 @keyframes slidein {
-  from { transform: scaleX(1  ); }
-  to   { transform: scaleX(3); }
+  from { transform: scaleX(1); }
+  to   { transform: scaleX(0); }
 }
-.about-us {
+.about-us { 
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -145,22 +198,100 @@ nav a:hover{
   padding: 40px 80px;
   border-top: 2px solid #eeeeee;
 }
-
-.about-us img {
-  width: 500px;
-  max-width: 100%;
+.about-us .images{
+  display: flex;
+  flex-wrap: wrap;
+}
+.about-us .images img {
+  width: 40vh;
   height: auto;
+  margin-right: 10px;
   border-radius: 10px;
+  border: 1px solid #ccc;
+  box-shadow: 2px 2px 6px 0px  rgba(0,0,0,0.3);
+  max-width: 100%;
 }
 .footer {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: ;
   background-color: #000000;
-  padding: 40px 80px;
+  padding: 40px;
+}
+.form-style-1 {
+	margin:10px auto;
+	max-width: 400px;
+	padding: 20px 12px 10px 20px;
+	font: 13px "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+}
+.form-style-1 li {
+	padding: 0;
+	display: block;
+	list-style: none;
+	margin: 10px 0 0 0;
+}
+.form-style-1 label{
+	margin:0 0 3px 0;
+	padding:0px;
+	display:block;
+	font-weight: bold;
+}
+.form-style-1 input[type=text], 
+.form-style-1 input[type=date],
+.form-style-1 input[type=datetime],
+.form-style-1 input[type=number],
+.form-style-1 input[type=search],
+.form-style-1 input[type=time],
+.form-style-1 input[type=url],
+.form-style-1 input[type=email],
+textarea, 
+select{
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	border:1px solid #BEBEBE;
+	padding: 7px;
+	margin:0px;
+	outline: none;	
+}
+
+.form-style-1 .field-divided{
+	width: 49%;
+}
+
+.form-style-1 .field-long{
+	width: 100%;
+}
+.form-style-1 .field-select{
+	width: 100%;
+}
+.form-style-1 .field-textarea{
+	height: 100px;
+}
+.form-style-1 input[type=submit], .form-style-1 input[type=button]{
+	background: #000000;
+	padding: 8px 15px 8px 15px;
+	border: none;
+	color: #fff;
+}
+.form-style-1 input[type=submit]:hover, .form-style-1 input[type=button]:hover{
+	background: #ff0000;
+	box-shadow:none;
+	-moz-box-shadow:none;
+	-webkit-box-shadow:none;
+}
+.form-style-1 .required{
+	color:red;
+}
+.footer div{
+  margin: 20px;
 }
 
 .footer .copy {
+  justify-content: center;
+  align-items: center;
+  text-align: center;
   font-size: 2em;
   color: rgb(255, 255, 255);
 }
@@ -168,7 +299,7 @@ nav a:hover{
   display: flex;
   justify-content: space-around;
   align-items: center;
-  padding: 40px 0;
+  flex-wrap: wrap;
 }
 
 .bottom-links .links {
@@ -176,7 +307,6 @@ nav a:hover{
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 0 40px;
 }
 
 .bottom-links .links span {
@@ -189,5 +319,7 @@ nav a:hover{
 .bottom-links .links a {
   text-decoration: none;
   color: #ffffff;
-  padding: 10px 20px;
+}
+.bottom-links .links a:hover{
+  color: #ec0000;
 }

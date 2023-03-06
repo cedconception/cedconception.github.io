@@ -5,22 +5,26 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="./img/batotoyabeni.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
     <link rel="stylesheet" href="./css/style.css">
     <title>BATOTO YA BENI | PARTCIPEZ</title>
 </head>
 <body>
     <div class="mainPage">
-        <header class="header">
-          <a href="#" class="logo"><img  class="iconL" src="./img/batotoyabeni.png" alt="Batoto YA BENI LOGO">
-            <p>BATOTO YA BENI </p> 
-          </a>
-          <nav class="nav-items">
-            <a href="index.html">Accueil</a>
-            <a href="participer.html">Participez</a>
-            <a href="occupation.html">Que faire à Beni</a>
-            <a href="contact.html">Contact</a>
-          </nav>
-        </header>
+      <header class="header">
+        <a href="index.html" class="logo"><img  class="iconL" src="./img/batotoyabeni.png" alt="Batoto YA BENI LOGO">
+          <p>BATOTO YA BENI</p> 
+        </a>
+        <nav class="nav-items">
+          <ul>
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="participer.html">Participez</a></li>
+            <li><a href="occupation.html">Que faire à Beni</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+        <img src="./img/menu_FILL0_wght400_GRAD0_opsz48.png" alt="MENU" class="menu-hamburger">
+      </header>
           <main>
             <div class="intro">
                 <h1 style="font-size: 2em;">Construisons Beni ensemble</h1>
@@ -48,13 +52,22 @@
                 </div>
                 <div class="links">
                   <span>Social Links</span>
-                  <a href="https://web.facebook.com/batotoyabeni"><i class="icon-facebook" href="./img/facebook.png"></i></a>
-                  <a href="#"><i class="icon-twitter"></i></a>
-                  <a href="#"><i class="icon-instagram"></i></a>
+                  <a href="https://web.facebook.com/batotoyabeni">facebook  .<i class="fab fa-facebook" href="./img/facebook.png"></i></a>
+                  <a href="#">twitter  .<i class="fab fa-twitter"></i></a>
+                  <a href="#">instagram  .<i class="fab fa-instagram"></i></a>
                 </div>
               </div>
             </footer>
           </main>
     </div>
 </body>
+<script>
+  const menuHamburger = document.querySelector(".menu-hamburger")
+  const navLinks = document.querySelector(".nav-items")
+
+  menuHamburger.addEventListener('click',(e)=>{
+  navLinks.classList.toggle('mobile-menu')
+  })
+</script>
+<script type="text/javascript" src="script.js"></script>
 </html>
